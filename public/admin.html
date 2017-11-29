@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Admin</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+
+</head>
+
+<body ng-app="candidate" ng-controller="MainCtrl">
+    <div class="text-center">
+        <h1>ADMIN PAGE</h1>
+
+        <div class="col-md-8 offset-md-2">
+            <form ng-submit="addCandidate()" class="form-inline offset-md-3">
+                <div class="form-group">
+                    <label for="datname">Candidate:</label>
+                    <input class="form-control" id="datname" type="text" ng-model="formContent" placeholder="Nate" required>
+                </div>
+                <button type="submit" class="btn btn-success">Add</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="col-md-8 offset-md-2" style="margin-top: 80px;">
+        <ul class="list-group" ng-repeat="candidate in candidates">
+            <li class="list-group-item list-group-item-action justify-content-between">
+                {{candidate.name}}
+                <button type="submit" class="btn btn-danger btn-sm" ng-click="delete(candidate)" style="float: right; margin-top: -5px;">Delete Candidate</button>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>

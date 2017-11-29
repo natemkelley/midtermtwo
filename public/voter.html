@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Voter</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+
+</head>
+
+<body ng-app="candidate" ng-controller="MainCtrl">
+    <div>
+        <h1 class="text-center">VOTER PAGE</h1>
+
+        <div class="col-md-8 offset-md-2" style="margin-top: 80px;">
+            <ul class="list-group" ng-repeat="candidate in candidates">
+                <li class="list-group-item list-group-item-action">
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">{{candidate.name}}</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="row" style="margin-top: 15px">
+            <div class="col-md-8 offset-md-2">
+                <button type="submit" class="btn btn-success">Cast Vote</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
